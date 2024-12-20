@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { generateResponse } from '../services/openai';
+import { generateResponse } from '../services/gemini';
 import { generateSpeech } from '../services/elevenlabs';
 import { useAvatarStore } from '../store/useAvatarStore';
 
@@ -14,7 +14,7 @@ export function ChatInput() {
 
     setIsLoading(true);
     try {
-      // Get response from OpenAI
+      // Get response from Gemini
       const response = await generateResponse(message);
       if (!response) return;
 
